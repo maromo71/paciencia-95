@@ -251,7 +251,86 @@
 
 @media (prefers-reduced-motion: reduce) {
   .card-dealing,
-  .card-flipping {
-    animation: none;
+  .card-flipping,
+  .led-blinking,
+  .term-cursor,
+  .hint-source,
+  .hint-target {
+    animation: none !important;
   }
+}
+
+/* Easter Egg Animado: LED no verso de Placa de Circuito */
+@keyframes led-blink {
+  0%, 82%, 100% {
+    opacity: 0.25;
+    filter: none;
+  }
+  86%, 94% {
+    opacity: 1;
+    filter: drop-shadow(0 0 3px #ff1a1a);
+  }
+}
+
+.led-blinking {
+  animation: led-blink 4s infinite ease-in-out;
+}
+
+/* Cursor piscante no verso de Terminal */
+@keyframes terminal-blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+.term-cursor {
+  animation: terminal-blink 1s infinite;
+}
+
+/* Destaque visual da Dica de Cartas (Hint) */
+@keyframes hint-border-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 3px #ffea00,
+      0 0 8px rgba(255, 234, 0, 0.8),
+      inset 0 0 0 1px #ffffff;
+    transform: translateY(-2px);
+  }
+  50% {
+    box-shadow:
+      0 0 0 2px #ffea00,
+      0 0 3px rgba(255, 234, 0, 0.4),
+      inset 0 0 0 1px #ffffff;
+    transform: translateY(0);
+  }
+}
+
+.card.hint-source {
+  animation: hint-border-pulse 1.1s infinite ease-in-out !important;
+  z-index: 500 !important;
+}
+
+@keyframes hint-target-pulse {
+  0%, 100% {
+    outline: 3px dashed #00e5ff;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  50% {
+    outline: 2px dashed #00e5ff;
+    outline-offset: 1px;
+    border-radius: 4px;
+  }
+}
+
+.pile.hint-target {
+  animation: hint-target-pulse 1.1s infinite ease-in-out !important;
+}
+
+.pile.hint-target .card-slot {
+  border-color: #00e5ff !important;
+  background: rgba(0, 229, 255, 0.15) !important;
 }

@@ -195,6 +195,7 @@ async fn stats(State(app): State<AppState>) -> Result<Json<StatsResponse>, ApiEr
 mod tests {
     use super::*;
     use crate::db;
+    use crate::engine::{Move, ScoringMode};
 
     async fn test_state() -> AppState {
         let pool = db::init_memory().await.unwrap();

@@ -47,10 +47,18 @@ function wasteCardLeft(index) {
   return index * FAN;
 }
 
+const FOUNDATION_THEMES = [
+  { suit: 'H', symbol: '♥', area: 'Gestão', fullArea: 'Gestão, Negócios e Pessoas' },
+  { suit: 'S', symbol: '♠', area: 'TI/Software', fullArea: 'Tecnologia da Informação e Software' },
+  { suit: 'C', symbol: '♣', area: 'Mecânica', fullArea: 'Mecânica, Indústria e Automação' },
+  { suit: 'D', symbol: '♦', area: 'Eletrônica', fullArea: 'Eletrônica, Redes e Telecomunicações' },
+];
+
 export default function Board({
   game,
   cardBack,
   winAnimation,
+  hint = null,
   onWinAnimationDone,
   onDraw,
   onRecycle,
@@ -229,6 +237,20 @@ export default function Board({
   const visibleWaste = game.waste.slice(-game.draw);
   const wasteTopIndex = visibleWaste.length - 1;
 
+  const isHintSource = (ref, cardIdx) => {
+    if (!hint || hint.type !== 'move') return false;
+    if (hint.from.pile !== ref.pile) return false;
+    if (ref.pile === 'waste' || ref.pile === 'foundation') return true;
+    return hint.from.index === ref.index && hint.cardIndex === cardIdx;
+  };
+
+  const isHintTarget = (ref) => {
+    if (!hint || hint.type !== 'move') return false;
+    return hint.to.pile === ref.pile && hint.to.index === ref.index;
+  };
+
+  const isStockHint = hint && (hint.type === 'draw' || hint.type === 'recycle');
+
   return (
     <div
       className={`game-field ${drag?.active ? 'dragging' : ''}`}
@@ -236,7 +258,7 @@ export default function Board({
       aria-label="Tabuleiro de paciência"
     >
       <div
-        className="stock-pile pile"
+        className={`stock-pile pile ${isStockHint ? 'hint-source' : ''}`}
         role="button"
         tabIndex={0}
         aria-label="Monte de compra"
@@ -277,11 +299,12 @@ export default function Board({
           visibleWaste.map((card, index) => {
             const isTop = index === wasteTopIndex;
             const originalIndex = game.waste.length - visibleWaste.length + index;
+            const isSourceHint = isTop && isHintSource({ pile: 'waste', index: 0 }, 0);
             return (
               <Card
                 key={`${game.id}-${card.suit}${card.rank}`}
                 card={card}
-                className={`back-${cardBack}`}
+                className={`back-${cardBack} ${isSourceHint ? 'hint-source' : ''}`}
                 dealing={dealing}
                 hidden={isHidden({ pile: 'waste' }, originalIndex)}
                 style={{ top: 0, left: wasteCardLeft(index), zIndex: index + 1 }}
@@ -303,28 +326,34 @@ export default function Board({
       </div>
 
       {game.foundations.map((pile, index) => {
+        const theme = FOUNDATION_THEMES[index] || FOUNDATION_THEMES[0];
         const target = { pile: 'foundation', index };
         const dropHover =
           drag?.target?.pile === 'foundation' && drag.target.index === index;
+        const isTargetHint = isHintTarget(target);
         const top = pile[pile.length - 1];
+        const isSourceHint = top && isHintSource(target, pile.length - 1);
         return (
           <div
             className={`foundation-pile pile ${
               canDropHere(target) ? 'can-drop' : ''
-            } ${dropHover ? 'drop-hover' : ''}`}
+            } ${dropHover ? 'drop-hover' : ''} ${isTargetHint ? 'hint-target' : ''}`}
             key={`foundation-${index}`}
             data-drop={`foundation-${index}`}
             style={{ left: foundationX(index) }}
-            aria-label={`Fundação ${index + 1}`}
+            aria-label={`Fundação ${index + 1}: ${theme.fullArea}`}
           >
-            <div className="card-slot">
-              <div className="foundation-placeholder" aria-hidden="true" />
+            <div className="card-slot" title={`Fundação ${theme.symbol}: ${theme.fullArea}`}>
+              <div className="foundation-placeholder" aria-hidden="true">
+                <span className="foundation-suit-symbol">{theme.symbol}</span>
+                <span className="foundation-area-tag">{theme.area}</span>
+              </div>
             </div>
             {top && (
               <Card
                 key={`${game.id}-${top.suit}${top.rank}`}
                 card={top}
-                className={`back-${cardBack}`}
+                className={`back-${cardBack} ${isSourceHint ? 'hint-source' : ''}`}
                 dealing={dealing}
                 hidden={isHidden(target, pile.length - 1)}
                 style={{ top: 0, left: 0 }}
@@ -342,11 +371,12 @@ export default function Board({
         const tops = pileTops(pile);
         const dropHover =
           drag?.target?.pile === 'tableau' && drag.target.index === column;
+        const isTargetHint = isHintTarget(target);
         return (
           <div
             className={`tableau-pile pile ${
               canDropHere(target) ? 'can-drop' : ''
-            } ${dropHover ? 'drop-hover' : ''}`}
+            } ${dropHover ? 'drop-hover' : ''} ${isTargetHint ? 'hint-target' : ''}`}
             key={`tableau-${column}`}
             data-drop={`tableau-${column}`}
             style={{ left: tableauX(column) }}
@@ -358,11 +388,12 @@ export default function Board({
                 game.lastFlip?.pile === 'tableau' &&
                 game.lastFlip.index === column &&
                 game.lastFlip.cardIndex === index;
+              const isSourceHint = isHintSource(target, index);
               return (
                 <Card
                   key={`${game.id}-${card.suit}${card.rank}`}
                   card={card}
-                  className={`back-${cardBack}`}
+                  className={`back-${cardBack} ${isSourceHint ? 'hint-source' : ''}`}
                   dealing={dealing}
                   style={{
                     top: tops[index],

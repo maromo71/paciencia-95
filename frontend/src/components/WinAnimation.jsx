@@ -51,6 +51,85 @@ function drawCard(context, card, x, y, alpha = 1) {
   context.restore();
 }
 
+function drawGraduationCap(context, x, y, angle = 0, alpha = 1) {
+  context.save();
+  context.globalAlpha = alpha;
+  context.translate(x + CARD_W / 2, y + CARD_H / 2);
+  context.rotate(angle);
+  const size = 38;
+
+  // Losango do capelo de formatura
+  context.fillStyle = '#111827';
+  context.strokeStyle = '#374151';
+  context.lineWidth = 1.2;
+  context.beginPath();
+  context.moveTo(0, -size * 0.38);
+  context.lineTo(size * 0.65, 0);
+  context.lineTo(0, size * 0.38);
+  context.lineTo(-size * 0.65, 0);
+  context.closePath();
+  context.fill();
+  context.stroke();
+
+  // Gorro inferior
+  context.beginPath();
+  context.rect(-size * 0.22, 0, size * 0.44, size * 0.26);
+  context.fill();
+  context.stroke();
+
+  // Borla / Pingente dourado
+  context.strokeStyle = '#d4af37';
+  context.lineWidth = 1.6;
+  context.beginPath();
+  context.moveTo(0, 0);
+  context.lineTo(size * 0.45, size * 0.3);
+  context.stroke();
+  context.fillStyle = '#d4af37';
+  context.beginPath();
+  context.arc(size * 0.45, size * 0.3, 2.5, 0, Math.PI * 2);
+  context.fill();
+
+  context.restore();
+}
+
+function drawDiploma(context, x, y, angle = 0, alpha = 1) {
+  context.save();
+  context.globalAlpha = alpha;
+  context.translate(x + CARD_W / 2, y + CARD_H / 2);
+  context.rotate(angle);
+  const w = 48;
+  const h = 24;
+
+  context.fillStyle = '#fffdf0';
+  context.strokeStyle = '#a8a29e';
+  context.lineWidth = 1;
+  roundedRect(context, -w / 2, -h / 2, w, h, 4);
+  context.fill();
+  context.stroke();
+
+  // Fita vermelha de graduação
+  context.fillStyle = '#dc2626';
+  context.fillRect(-5, -h / 2, 10, h);
+
+  // Selo dourado de excelência CPS
+  context.fillStyle = '#d4af37';
+  context.beginPath();
+  context.arc(0, 2, 4, 0, Math.PI * 2);
+  context.fill();
+
+  context.restore();
+}
+
+function renderItem(context, particle, x, y, alpha) {
+  if (particle.itemType === 'cap') {
+    drawGraduationCap(context, x, y, particle.angle, alpha);
+  } else if (particle.itemType === 'diploma') {
+    drawDiploma(context, x, y, particle.angle, alpha);
+  } else {
+    drawCard(context, particle.card, x, y, alpha);
+  }
+}
+
 export default function WinAnimation({ active, foundations, onDone }) {
   const canvasRef = useRef(null);
   const doneRef = useRef(false);
@@ -83,8 +162,13 @@ export default function WinAnimation({ active, foundations, onDone }) {
     const particles = [];
     foundations.forEach((pile, foundationIndex) => {
       pile.forEach((card, cardIndex) => {
+        let itemType = 'card';
+        if (cardIndex === 12) itemType = 'diploma'; // O Rei vira Diploma de formatura
+        else if (cardIndex === 11) itemType = 'cap'; // A Dama joga o Capelo
+
         particles.push({
           card,
+          itemType,
           startX: foundationX(foundationIndex) + (cardIndex % 3) * 2,
           startY: 20 + (cardIndex % 3) * 2,
           delay: foundationIndex * 45 + cardIndex * 32,
@@ -92,6 +176,8 @@ export default function WinAnimation({ active, foundations, onDone }) {
           y: 20,
           vx: 0,
           vy: 0,
+          angle: 0,
+          vRot: (Math.random() - 0.5) * 6,
           launched: false,
           removed: false,
           trail: [],
@@ -132,11 +218,13 @@ export default function WinAnimation({ active, foundations, onDone }) {
         particle.vy += 1350 * dt;
         particle.x += particle.vx * dt;
         particle.y += particle.vy * dt;
+        particle.angle += particle.vRot * dt;
 
         if (particle.y + CARD_H > HEIGHT) {
           particle.y = HEIGHT - CARD_H;
           particle.vy = -Math.abs(particle.vy) * 0.8;
           particle.vx *= 0.985;
+          particle.vRot = (Math.random() - 0.5) * 8;
         }
         if (particle.x < 0) {
           particle.x = 0;
@@ -157,9 +245,9 @@ export default function WinAnimation({ active, foundations, onDone }) {
 
         for (let index = particle.trail.length - 1; index >= 1; index -= 1) {
           const point = particle.trail[index];
-          drawCard(context, particle.card, point.x, point.y, 0.055 * (7 - index));
+          renderItem(context, particle, point.x, point.y, 0.055 * (7 - index));
         }
-        drawCard(context, particle.card, particle.x, particle.y, 1);
+        renderItem(context, particle, particle.x, particle.y, 1);
       }
 
       if (total > DURATION) {
@@ -184,7 +272,7 @@ export default function WinAnimation({ active, foundations, onDone }) {
       <canvas
         ref={canvasRef}
         className="win-canvas"
-        aria-label="Animação de vitória. Clique para continuar."
+        aria-label="Animação de vitória e colação de grau. Clique para continuar."
         tabIndex={0}
         onClick={() => {
           if (!doneRef.current) {
@@ -202,7 +290,7 @@ export default function WinAnimation({ active, foundations, onDone }) {
           }
         }}
       />
-      <div className="win-hint">Clique para continuar</div>
+      <div className="win-hint">🎓 Parabéns Formando! Clique para receber o diploma</div>
     </>
   );
 }

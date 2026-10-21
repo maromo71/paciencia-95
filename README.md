@@ -1,31 +1,48 @@
-# Paciência 95
+# Paciência 95 — Edição Educacional Etec & Fatec
 
 Uma recriação do clássico **Paciência (Klondike) do Windows 95**, com frontend em
-**React + Vite** e backend em **Rust + Axum + SQLite**.
+**React + Vite** e backend em **Rust + Axum + SQLite**, transformada em uma
+plataforma retrô e educativa para divulgar e valorizar o ensino público profissional
+e superior do **Centro Paula Souza (Etec e Fatec)**.
 
 O jogo roda no navegador com resposta imediata, mas o backend tem papel de
 verdade: cria a distribuição, salva o progresso, valida a sequência de jogadas
 por replay, calcula a pontuação oficial e mantém recordes e estatísticas.
 
-![Tabuleiro do Paciência 95](screenshots/board.png)
+![Tabuleiro do Paciência 95 - Edição Etec e Fatec](screenshots/cps-01-board-chipset.png)
 
-| Vitória | Opções |
+| Dica Inteligente no Tabuleiro | Guia de Cursos (WinHelp 95) |
 | --- | --- |
-| ![Diálogo de vitória](screenshots/win-dialog.png) | ![Opções do jogo](screenshots/options.png) |
+| ![Dica Ativa com destaque visual](screenshots/cps-02-hint-active.png) | ![Guia de Cursos do CPS](screenshots/cps-03-winhelp-fatec.png) |
 
-## Recursos
+## Recursos Especiais da Edição Etec & Fatec
 
-- Klondike completo: 7 colunas, 4 fundações, monte e descarte.
-- Compra de **uma** ou **três** cartas, com reciclagem do descarte.
-- Arrastar e soltar com a pilha inteira, duplo clique para enviar à fundação e
-  virada automática de cartas expostas.
-- Pontuação padrão, Vegas ou desativada; jogo cronometrado opcional.
-- Interface inspirada no Windows 95: janela, menus, barra de status, bevels,
-  cartas e versos desenhados em SVG/CSS.
-- Animação de vitória com cartas quicando e deixando rastro.
-- Salvamento automático, retomada de partida, recordes e estatísticas.
-- Modo offline: se o backend estiver indisponível, o jogo continua com
-  salvamento em `localStorage`.
+- **Versos Temáticos do Baralho (*Menu Opções > Verso das cartas*):**
+  - **Placa de Circuito / Chipset FATEC:** PCB verde com barramentos dourados, processador gravado e LED vermelho piscante animado como *easter egg*.
+  - **Campus & Prédios Históricos:** Fachada colonial e torre de relógio clássica das escolas técnicas.
+  - **Engrenagem e Livro Técnico ETEC:** Símbolo clássico da formação profissional do CPS.
+  - **Terminal Retrô / DOS:** Tela de fósforo verde com o prompt `C:\CPS\VESTIBULAR> _` e cursor piscante.
+- **Figuras da Realeza Acadêmicas:**
+  - **Valete (J):** O Estudante / Estagiário técnico (jaleco, crachá, bolso e ferramentas).
+  - **Dama (Q):** A Professora / Cientista / Pesquisadora (óculos, jaleco e laptop de código).
+  - **Rei (K):** O Patrono / Diretor (beca solene de colação de grau, capelo e diploma).
+  - **Ás (A):** O Brasão de Excelência do Centro Paula Souza com louros dourados.
+- **As 4 Fundações do Conhecimento:**
+  - Copas (♥): Gestão, Negócios & Pessoas.
+  - Espadas (♠): Tecnologia da Informação & Software.
+  - Paus (♣): Mecânica, Indústria & Automação.
+  - Ouros (♦): Eletrônica, Redes & Telecomunicações.
+- **Guia de Cursos Estilo WinHelp 95 (`winhelp.exe`):**
+  - Janela autêntica com barra de ferramentas, abas Fatec (superior), Etec (técnico) e Vestibulares.
+  - Informações completas sobre habilidades práticas aprendidas, atuação no mercado de trabalho e links diretos para inscrição.
+- **Algoritmo Inteligente de Dicas (*Hint*):**
+  - Botão na barra de menus (`Jogo > Dica de jogada`), atalho de teclado `H` e botão rápido `💡 Dica`.
+  - Destaque visual pulsante na carta de origem e na pilha de destino, com instruções claras no rodapé.
+- **Animação de Formatura:**
+  - Chuva de cartas em cascata clássica acompanhada por **capelos de formatura** e **diplomas com fita vermelha** quicando pelo tabuleiro.
+  - Diálogo especial de *Colação de Grau* com botão direto para conhecer os cursos.
+- **Barra de Status Educativa:**
+  - Ticker rotativo que exibe curiosidades sobre as unidades, benefícios do ensino público gratuito e mercado de trabalho.
 
 ## Stack
 

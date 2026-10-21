@@ -16,11 +16,161 @@ export default function CardBack({ type = 'blue' }) {
         </div>
       );
 
+    case 'chipset':
+      return (
+        <div className="card-back-inner back-illustrated" aria-hidden="true">
+          <svg viewBox="0 0 62 86" className="card-back-svg">
+            <rect width="62" height="86" fill="#0d3b1e" />
+            <path
+              d="M6,10 L20,10 L24,14 L38,14 L42,10 L56,10 M6,22 L16,22 L20,26 L42,26 L46,22 L56,22 M6,64 L16,64 L20,60 L42,60 L46,64 L56,64 M6,76 L20,76 L24,72 L38,72 L42,76 L56,76 M14,6 L14,20 L10,24 L10,62 L14,66 L14,80 M48,6 L48,20 L52,24 L52,62 L48,66 L48,80"
+              fill="none"
+              stroke="#d4af37"
+              strokeWidth="0.8"
+              opacity="0.85"
+            />
+            <circle cx="20" cy="10" r="1.2" fill="#d4af37" />
+            <circle cx="42" cy="10" r="1.2" fill="#d4af37" />
+            <circle cx="20" cy="26" r="1.2" fill="#d4af37" />
+            <circle cx="42" cy="26" r="1.2" fill="#d4af37" />
+            <circle cx="20" cy="60" r="1.2" fill="#d4af37" />
+            <circle cx="42" cy="60" r="1.2" fill="#d4af37" />
+            <circle cx="20" cy="76" r="1.2" fill="#d4af37" />
+            <circle cx="42" cy="76" r="1.2" fill="#d4af37" />
+            <g transform="translate(15, 30)">
+              <path
+                d="M-3,5 L0,5 M-3,10 L0,10 M-3,15 L0,15 M-3,20 L0,20 M32,5 L35,5 M32,10 L35,10 M32,15 L35,15 M32,20 L35,20 M5,-3 L5,0 M10,-3 L10,0 M15,-3 L15,0 M20,-3 L20,0 M25,-3 L25,0 M5,26 L5,29 M10,26 L10,29 M15,26 L15,29 M20,26 L20,29 M25,26 L25,29"
+                stroke="#e0e0e0"
+                strokeWidth="0.9"
+              />
+              <rect width="32" height="26" rx="2" fill="#1c1c1c" stroke="#333" strokeWidth="0.8" />
+              <circle cx="3" cy="3" r="1" fill="#444" />
+              <text x="16" y="13" textAnchor="middle" fontSize="6.5" fontWeight="bold" fill="#d4af37" fontFamily="Tahoma, monospace" letterSpacing="0.6">
+                FATEC
+              </text>
+              <text x="16" y="20" textAnchor="middle" fontSize="3.8" fill="#aaa" fontFamily="monospace">
+                CPS-95
+              </text>
+            </g>
+            <circle cx="8" cy="8" r="2.2" fill="#ff2222" className="led-blinking" />
+            <circle cx="8" cy="8" r="0.8" fill="#ffffff" />
+            <text x="12" y="9.2" fontSize="3" fill="#66bb6a" fontFamily="monospace">D1</text>
+          </svg>
+        </div>
+      );
+
+    case 'campus':
+      return (
+        <div className="card-back-inner back-illustrated" aria-hidden="true">
+          <svg viewBox="0 0 62 86" className="card-back-svg">
+            <rect width="62" height="86" fill="#87ceeb" />
+            <rect x="6" y="8" width="14" height="4" fill="#ffffff" rx="1" />
+            <rect x="9" y="6" width="8" height="3" fill="#ffffff" rx="1" />
+            <rect x="42" y="12" width="16" height="4" fill="#ffffff" rx="1" />
+            <rect x="46" y="10" width="8" height="3" fill="#ffffff" rx="1" />
+            <rect y="74" width="62" height="12" fill="#2e7d32" />
+            <rect y="81" width="62" height="5" fill="#4e342e" />
+            <rect x="4" y="38" width="54" height="38" fill="#b71c1c" stroke="#5f0909" strokeWidth="0.8" />
+            <rect x="3" y="36" width="56" height="3" fill="#fffdf4" stroke="#d7ccc8" strokeWidth="0.5" />
+            <rect x="23" y="18" width="16" height="40" fill="#a31515" stroke="#5f0909" strokeWidth="0.8" />
+            <polygon points="21,18 31,8 41,18" fill="#37474f" />
+            <line x1="31" y1="8" x2="31" y2="3" stroke="#222" strokeWidth="0.8" />
+            <polygon points="31,3 36,4.5 31,6" fill="#d32f2f" />
+            <circle cx="31" cy="24" r="3.5" fill="#ffffff" stroke="#333" strokeWidth="0.6" />
+            <line x1="31" y1="24" x2="31" y2="22" stroke="#000" strokeWidth="0.6" />
+            <line x1="31" y1="24" x2="32.5" y2="24" stroke="#000" strokeWidth="0.6" />
+            <rect x="28" y="30" width="6" height="7" rx="3" fill="#ffecb3" stroke="#4e342e" strokeWidth="0.5" />
+            <rect x="8" y="44" width="4" height="6" rx="2" fill="#ffecb3" />
+            <rect x="15" y="44" width="4" height="6" rx="2" fill="#ffecb3" />
+            <rect x="43" y="44" width="4" height="6" rx="2" fill="#ffecb3" />
+            <rect x="50" y="44" width="4" height="6" rx="2" fill="#ffecb3" />
+            <rect x="8" y="56" width="4" height="6" rx="2" fill="#ffecb3" />
+            <rect x="15" y="56" width="4" height="6" rx="2" fill="#ffecb3" />
+            <rect x="43" y="56" width="4" height="6" rx="2" fill="#ffecb3" />
+            <rect x="50" y="56" width="4" height="6" rx="2" fill="#ffecb3" />
+            <path d="M26,76 L26,62 Q31,58 36,62 L36,76 Z" fill="#263238" />
+            <rect x="25" y="60" width="12" height="2" fill="#fffdf4" />
+            <text x="31" y="54" textAnchor="middle" fontSize="3.8" fontWeight="bold" fill="#ffffff" fontFamily="Tahoma, sans-serif" letterSpacing="0.4">
+              ETEC · FATEC
+            </text>
+          </svg>
+        </div>
+      );
+
+    case 'etec':
+      return (
+        <div className="card-back-inner back-illustrated" aria-hidden="true">
+          <svg viewBox="0 0 62 86" className="card-back-svg">
+            <rect width="62" height="86" fill="#660000" />
+            <rect x="3" y="3" width="56" height="80" fill="none" stroke="#d4af37" strokeWidth="1" strokeDasharray="3,1.5" />
+            <rect x="5" y="5" width="52" height="76" fill="none" stroke="#ffffff" strokeWidth="0.5" opacity="0.4" />
+            <g transform="translate(31, 38)">
+              {[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => (
+                <rect
+                  key={angle}
+                  x="-3.5"
+                  y="-21"
+                  width="7"
+                  height="6"
+                  rx="0.5"
+                  fill="#f5b041"
+                  stroke="#b7791f"
+                  strokeWidth="0.6"
+                  transform={`rotate(${angle})`}
+                />
+              ))}
+              <circle cx="0" cy="0" r="17" fill="#f5b041" stroke="#b7791f" strokeWidth="0.8" />
+              <circle cx="0" cy="0" r="12" fill="#660000" stroke="#b7791f" strokeWidth="0.8" />
+              <line x1="-12" y1="0" x2="12" y2="0" stroke="#f5b041" strokeWidth="2.5" />
+              <line x1="0" y1="-12" x2="0" y2="12" stroke="#f5b041" strokeWidth="2.5" />
+              <circle cx="0" cy="0" r="4.5" fill="#f5b041" stroke="#b7791f" strokeWidth="0.8" />
+            </g>
+            <g transform="translate(31, 62)">
+              <path d="M-18,6 Q-9,1 0,5 Q9,1 18,6 L18,16 Q9,11 0,15 Q-9,11 -18,16 Z" fill="#fffdf4" stroke="#444" strokeWidth="0.7" />
+              <line x1="0" y1="5" x2="0" y2="15" stroke="#888" strokeWidth="0.8" />
+              <line x1="-14" y1="9" x2="-3" y2="7.5" stroke="#660000" strokeWidth="0.6" />
+              <line x1="-14" y1="12" x2="-3" y2="10.5" stroke="#660000" strokeWidth="0.6" />
+              <line x1="3" y1="7.5" x2="14" y2="9" stroke="#660000" strokeWidth="0.6" />
+              <line x1="3" y1="10.5" x2="14" y2="12" stroke="#660000" strokeWidth="0.6" />
+            </g>
+            <text x="31" y="16" textAnchor="middle" fontSize="7.5" fontWeight="bold" fill="#fffdf4" fontFamily="Arial Black, Impact, sans-serif" letterSpacing="1">
+              ETEC
+            </text>
+            <text x="31" y="21" textAnchor="middle" fontSize="3.2" fill="#d4af37" fontFamily="Tahoma, sans-serif">
+              ENSINO TÉCNICO
+            </text>
+          </svg>
+        </div>
+      );
+
+    case 'terminal':
+      return (
+        <div className="card-back-inner back-illustrated" aria-hidden="true">
+          <svg viewBox="0 0 62 86" className="card-back-svg">
+            <rect width="62" height="86" fill="#3a3a3a" />
+            <rect x="2" y="2" width="58" height="82" rx="3" fill="#1e1e1e" />
+            <rect x="4" y="5" width="54" height="74" rx="2" fill="#041206" stroke="#003311" strokeWidth="0.8" />
+            {[12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72].map((y) => (
+              <line key={y} x1="5" y1={y} x2="57" y2={y} stroke="#072b0c" strokeWidth="0.5" opacity="0.6" />
+            ))}
+            <g fill="#00ff66" fontFamily="Courier New, monospace" fontSize="3.6" fontWeight="bold">
+              <text x="7" y="15">MS-DOS 6.22</text>
+              <text x="7" y="22">(C)CPS 1995</text>
+              <text x="7" y="32">C:\&gt;CD CPS</text>
+              <text x="7" y="42">C:\CPS&gt;DIR</text>
+              <text x="7" y="50" fontSize="3">ETEC  &lt;DIR&gt;</text>
+              <text x="7" y="55" fontSize="3">FATEC &lt;DIR&gt;</text>
+              <text x="7" y="65">C:\CPS&gt;VEST_</text>
+              <rect x="35" y="61.5" width="2.4" height="4" fill="#00ff66" className="term-cursor" />
+            </g>
+            <circle cx="53" cy="81" r="1.2" fill="#00ff66" />
+          </svg>
+        </div>
+      );
+
     case 'castle':
       return (
         <div className="card-back-inner back-illustrated" aria-hidden="true">
           <svg viewBox="0 0 62 86" className="card-back-svg">
-            {/* Céu noturno escuro */}
             <rect width="62" height="86" fill="#0d1b2a" />
             {/* Montanhas distantes */}
             <polygon points="0,58 18,44 38,58" fill="#1b263b" />

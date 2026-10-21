@@ -10,9 +10,12 @@ import StatsDialog from './components/StatsDialog.jsx';
 import StatusBar from './components/StatusBar.jsx';
 import WinDialog from './components/WinDialog.jsx';
 import WindowShell from './components/WindowShell.jsx';
+import WinHelpDialog from './components/WinHelpDialog.jsx';
 import { createGame, gameReducer } from './game/gameReducer.js';
 import { createLocalGame } from './game/session.js';
-import { formatTime, SCORING_MODES } from './game/scoring.js';
+import { formatTime } from './game/scoring.js';
+import { findHint } from './game/hint.js';
+import { getRandomCuriosity } from './game/curiosities.js';
 import {
   addLocalScore,
   clearSave,
@@ -37,10 +40,25 @@ export default function App() {
   const [offline, setOffline] = useState(false);
   const [statsRefresh, setStatsRefresh] = useState(0);
   const [booting, setBooting] = useState(true);
+  const [hint, setHint] = useState(null);
+  const [curiosity, setCuriosity] = useState(() => getRandomCuriosity().text);
 
   const bootedRef = useRef(false);
   const finishedGameRef = useRef(null);
   const scale = useViewportScale(660, 568);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCuriosity(getRandomCuriosity().text);
+    }, 14000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const handleRequestHint = useCallback(() => {
+    if (!game || game.status !== 'playing') return;
+    const found = findHint(game);
+    setHint(found);
+  }, [game]);
 
   const startNewGame = useCallback(
     async (nextOptions = options, { abandonGameId } = {}) => {
@@ -49,6 +67,7 @@ export default function App() {
       setPending(null);
       setWinResult(null);
       setWinAnimation(false);
+      setHint(null);
       finishedGameRef.current = null;
 
       const previousId =
@@ -292,9 +311,20 @@ export default function App() {
 
   useEffect(() => {
     const onKeyDown = (event) => {
+      if (event.key === 'F1') {
+        event.preventDefault();
+        setDialog('courses');
+        return;
+      }
       if (event.key === 'F2') {
         event.preventDefault();
         if (!dialog && !winAnimation) startNewGame(options);
+        return;
+      }
+      if (event.key === 'h' || event.key === 'H') {
+        if (!dialog && !winAnimation) {
+          handleRequestHint();
+        }
         return;
       }
       if (event.key === 'Escape') {
@@ -308,17 +338,17 @@ export default function App() {
     };
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [dialog, options, startNewGame, winAnimation]);
+  }, [dialog, handleRequestHint, options, startNewGame, winAnimation]);
 
-  const message = offline
-    ? 'Backend indisponível — salvando neste navegador.'
+  const message = hint
+    ? `💡 Dica: ${hint.message}`
     : game?.notice
       ? game.notice
-      : game?.status === 'won'
-        ? 'Você ganhou!'
-        : `${SCORING_MODES[game?.scoring ?? 'standard']} · ${
-            game?.draw === 1 ? 'comprar uma' : 'comprar três'
-          } · F2 novo jogo`;
+      : offline
+        ? 'Backend indisponível — salvando neste navegador.'
+        : game?.status === 'won'
+          ? 'Colação de Grau concluída com sucesso!'
+          : curiosity;
 
   return (
     <>
@@ -330,8 +360,10 @@ export default function App() {
       >
         <MenuBar
           onNewGame={handleNewGame}
+          onHint={handleRequestHint}
           onOptions={() => setDialog('options')}
           onStats={() => setDialog('stats')}
+          onCourses={() => setDialog('courses')}
           onAbout={() => setDialog('about')}
           onExit={() => setDialog('exit')}
           disabled={!game}
@@ -361,18 +393,27 @@ export default function App() {
                 game={game}
                 cardBack={options.cardBack}
                 winAnimation={winAnimation}
+                hint={hint}
                 onWinAnimationDone={handleWinAnimationDone}
-                onDraw={() => dispatch({ type: 'draw', now: Date.now() })}
-                onRecycle={() => dispatch({ type: 'recycle', now: Date.now() })}
-                onMove={(from, to, cardIndex) =>
+                onDraw={() => {
+                  setHint(null);
+                  setCuriosity(getRandomCuriosity().text);
+                  dispatch({ type: 'draw', now: Date.now() });
+                }}
+                onRecycle={() => {
+                  setHint(null);
+                  dispatch({ type: 'recycle', now: Date.now() });
+                }}
+                onMove={(from, to, cardIndex) => {
+                  setHint(null);
                   dispatch({
                     type: 'move',
                     from,
                     to,
                     cardIndex,
                     now: Date.now(),
-                  })
-                }
+                  });
+                }}
               />
             </div>
           )}
@@ -402,6 +443,10 @@ export default function App() {
         />
       )}
 
+      {dialog === 'courses' && (
+        <WinHelpDialog onClose={() => setDialog(null)} />
+      )}
+
       {dialog === 'about' && <AboutDialog onClose={() => setDialog(null)} />}
 
       {dialog === 'stats' && (
@@ -417,6 +462,7 @@ export default function App() {
           scoring={game.scoring}
           onNew={handleNewGame}
           onClose={() => setDialog(null)}
+          onOpenCourses={() => setDialog('courses')}
         />
       )}
 

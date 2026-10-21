@@ -3,14 +3,18 @@ import CardBack from './CardBack.jsx';
 import Dialog from './Dialog.jsx';
 
 const BACKS = [
-  { id: 'blue', label: 'Azul' },
-  { id: 'red', label: 'Vermelho' },
-  { id: 'green', label: 'Verde' },
-  { id: 'castle', label: 'Castelo' },
-  { id: 'beach', label: 'Praia' },
-  { id: 'robot', label: 'Robô' },
-  { id: 'hand', label: 'Manga' },
-  { id: 'fish', label: 'Peixe' },
+  { id: 'chipset', label: 'FATEC Chipset' },
+  { id: 'campus', label: 'Campus Etec/Fatec' },
+  { id: 'etec', label: 'ETEC Técnico' },
+  { id: 'terminal', label: 'DOS Vestibular' },
+  { id: 'blue', label: 'Clássico Azul' },
+  { id: 'red', label: 'Clássico Vermelho' },
+  { id: 'green', label: 'Clássico Verde' },
+  { id: 'castle', label: 'Castelo Retrô' },
+  { id: 'beach', label: 'Praia 95' },
+  { id: 'robot', label: 'Robô Cyber' },
+  { id: 'hand', label: 'Ás na Manga' },
+  { id: 'fish', label: 'Aquário 95' },
 ];
 
 export default function OptionsDialog({ options, onSave, onClose }) {

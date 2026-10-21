@@ -8,7 +8,7 @@ export const DEFAULT_OPTIONS = {
   draw: 3,
   scoring: 'standard',
   timed: false,
-  cardBack: 'blue',
+  cardBack: 'chipset',
   player: 'Jogador',
 };
 
@@ -31,6 +31,10 @@ function write(key, value) {
 }
 
 export const CARD_BACKS = [
+  'chipset',
+  'campus',
+  'etec',
+  'terminal',
   'blue',
   'red',
   'green',
