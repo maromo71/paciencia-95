@@ -1,0 +1,16 @@
+node_modules/
+frontend/dist/
+backend/target/
+src-tauri/target/
+target/
+dist/
+data/*.db
+data/*.db-shm
+data/*.db-wal
+.npm-cache/
+.cargo-home/
+.tmp/
+*.log
+.DS_Store
+Thumbs.db
+screenshots/crop-*.png

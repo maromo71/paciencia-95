@@ -1,0 +1,49 @@
+Paciência 95 — Windows x64
+==========================
+
+Uma recriação do clássico Paciência (Klondike) do Windows 95.
+
+COMO JOGAR
+----------
+1. Extraia esta pasta inteira para onde quiser (por exemplo, Documentos ou Desktop).
+2. Dê dois cliques em Paciencia95.exe.
+3. O navegador padrão abrirá o jogo automaticamente.
+
+Não é necessário instalar Node.js, Rust ou qualquer outro programa. O frontend,
+o backend e o SQLite estão no executável; o arquivo do banco é criado na pasta
+"dados" na primeira execução.
+
+A primeira execução pode levar alguns segundos. Uma janela preta (console)
+mostra o endereço local, por exemplo:
+  http://127.0.0.1:3001
+
+Mantenha essa janela aberta enquanto joga. Para encerrar o servidor, feche a
+janela do console ou pressione Ctrl+C.
+
+DADOS E RECORDES
+----------------
+- Com este pacote, o banco fica em: .\dados\paciencia.db
+- O arquivo portatil.txt ativa esse modo; mantenha-o junto do executável.
+- Se a pasta não permitir escrita (por exemplo, em Program Files), o jogo usa:
+  %LOCALAPPDATA%\Paciencia95\paciencia.db
+- Para começar do zero, feche o jogo e apague o arquivo paciencia.db.
+
+AVISO DO WINDOWS
+----------------
+O executável não tem assinatura digital comercial. Se o Windows SmartScreen
+mostrar um aviso, clique em "Mais informações" e depois em "Executar assim
+mesmo". O código-fonte está disponível para auditoria.
+
+OPÇÕES DE LINHA DE COMANDO
+--------------------------
+Paciencia95.exe --no-open     inicia sem abrir o navegador
+Paciencia95.exe --open        abre o navegador (padrão no executável)
+Paciencia95.exe --help        mostra a ajuda
+
+Também é possível definir PORT, HOST, PACIENTIA_DATA_DIR e DATABASE_PATH.
+
+O jogo é single-player e roda inteiramente na sua máquina. Não envia dados para
+a internet.
+
+Créditos: inspirado no Microsoft Solitaire de Wes Cherry e Susan Kare. Projeto
+independente, com arte e código próprios, sem assets da Microsoft.

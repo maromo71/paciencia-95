@@ -1,0 +1,205 @@
+.game-field {
+  position: relative;
+  width: 640px;
+  height: 480px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  background-color: var(--felt);
+  background-image:
+    radial-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent 55%);
+  background-size: 5px 5px, 100% 100%;
+  border: 2px solid;
+  border-color: #404040 #ffffff #ffffff #404040;
+  box-shadow: inset 1px 1px 0 #004000;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.pile {
+  position: absolute;
+}
+
+.stock-pile,
+.waste-pile {
+  width: 71px;
+  height: 96px;
+  top: 20px;
+}
+
+.stock-pile {
+  left: 20px;
+  cursor: pointer;
+}
+
+.stock-pile:focus-visible,
+.waste-pile:focus-visible {
+  outline: 2px solid #fff8a0;
+  outline-offset: 2px;
+}
+
+.stock-stack-shadow {
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  width: 71px;
+  height: 96px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.stock-empty {
+  cursor: pointer;
+}
+
+.card-slot {
+  position: absolute;
+  width: 71px;
+  height: 96px;
+  border: 1px solid rgba(0, 0, 0, 0.58);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.11);
+  box-shadow:
+    inset 1px 1px 2px rgba(0, 0, 0, 0.38),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.recycle-icon {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 30px;
+  line-height: 1;
+}
+
+.stock-count {
+  position: absolute;
+  right: -4px;
+  bottom: -5px;
+  min-width: 17px;
+  height: 15px;
+  padding: 0 3px;
+  display: grid;
+  place-items: center;
+  background: var(--win-gray);
+  border: 1px solid #404040;
+  box-shadow: inset 1px 1px 0 #fff;
+  color: #000;
+  font-size: 10px;
+  line-height: 1;
+}
+
+.waste-pile {
+  left: 107px;
+}
+
+.waste-pile .card {
+  left: var(--waste-left, 0);
+}
+
+.foundation-pile {
+  width: 71px;
+  height: 96px;
+  top: 20px;
+}
+
+.foundation-placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.18);
+  font-size: 32px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.tableau-pile {
+  width: 71px;
+  top: 128px;
+  height: 344px;
+}
+
+.tableau-pile .card {
+  left: 0;
+}
+
+.pile.can-drop .card-slot {
+  border-color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 255, 255, 0.24),
+    inset 1px 1px 2px rgba(0, 0, 0, 0.28);
+}
+
+.pile.drop-hover {
+  outline: 2px solid #fff8a0;
+  outline-offset: 2px;
+  border-radius: 5px;
+}
+
+.pile.drop-hover .card-slot {
+  border-color: #fff8a0;
+}
+
+.tableau-pile.drop-hover {
+  outline-offset: 1px;
+}
+
+.drag-layer {
+  position: absolute;
+  width: 71px;
+  z-index: 1000;
+  pointer-events: none;
+  filter: drop-shadow(4px 5px 2px rgba(0, 0, 0, 0.38));
+}
+
+.drag-layer .card {
+  left: 0;
+}
+
+.game-field.dragging {
+  cursor: grabbing;
+}
+
+.win-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 900;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.win-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  z-index: 901;
+  transform: translateX(-50%);
+  padding: 4px 12px;
+  background: var(--win-gray);
+  border: 2px solid;
+  border-color: var(--win-light) var(--win-dark) var(--win-dark) var(--win-light);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+  font-size: 11px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.board-status {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 800;
+  transform: translate(-50%, -50%);
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border: 1px solid #fff;
+  font-size: 12px;
+  pointer-events: none;
+}

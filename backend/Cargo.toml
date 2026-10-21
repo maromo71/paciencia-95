@@ -1,0 +1,40 @@
+[package]
+name = "paciencia-backend"
+version = "0.1.0"
+edition = "2024"
+description = "Backend Rust/Axum do Paciência 95"
+build = "build.rs"
+
+[lib]
+name = "paciencia_backend"
+path = "src/lib.rs"
+
+[[bin]]
+name = "paciencia-backend"
+path = "src/main.rs"
+
+
+[dependencies]
+axum = "0.8"
+mime_guess = "2"
+rand = "0.8"
+rust-embed = "8"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sqlx = { version = "0.8", default-features = false, features = ["runtime-tokio", "sqlite", "migrate", "macros"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "net", "signal"] }
+tower-http = { version = "0.6", features = ["cors", "fs", "trace"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+uuid = { version = "1", features = ["v4"] }
+
+[dev-dependencies]
+tempfile = "3"
+
+# Sem informações de depuração no C do SQLite: evita o erro D8050 do MSVC
+# observado em algumas instalações do Visual Studio 2026.
+[profile.dev]
+debug = 0
+
+[profile.test]
+debug = 0

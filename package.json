@@ -1,0 +1,27 @@
+{
+  "name": "paciencia-95",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Recriação do clássico Paciência (Klondike) do Windows 95 com React/Vite e Rust/Axum.",
+  "scripts": {
+    "dev": "concurrently -k -n backend,frontend -c blue,green \"npm:dev:backend\" \"npm:dev:frontend\"",
+    "dev:backend": "cargo run --manifest-path backend/Cargo.toml",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:tauri": "tauri dev",
+    "build": "npm --prefix frontend run build && cargo build --release --manifest-path backend/Cargo.toml",
+    "build:tauri": "tauri build",
+    "dist:windows": "npm run build && powershell -NoProfile -ExecutionPolicy Bypass -File tools/package-windows.ps1",
+    "start": "cargo run --release --manifest-path backend/Cargo.toml",
+    "start:no-open": "cargo run --release --manifest-path backend/Cargo.toml -- --no-open",
+    "tauri": "tauri",
+    "test": "npm --prefix frontend test && cargo test --manifest-path backend/Cargo.toml",
+    "lint": "npm --prefix frontend run lint"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.12.4",
+    "concurrently": "^9.2.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

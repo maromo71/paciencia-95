@@ -1,0 +1,1318 @@
+{
+  "deck": [
+    {
+      "suit": "S",
+      "rank": 13,
+      "faceUp": false
+    },
+    {
+      "suit": "S",
+      "rank": 12,
+      "faceUp": false
+    },
+    {
+      "suit": "S",
+      "rank": 10,
+      "faceUp": false
+    },
+    {
+      "suit": "C",
+      "rank": 4,
+      "faceUp": false
+    },
+    {
+      "suit": "D",
+      "rank": 5,
+      "faceUp": false
+    },
+    {
+      "suit": "H",
+      "rank": 6,
+      "faceUp": false
+    },
+    {
+      "suit": "S",
+      "rank": 7,
+      "faceUp": false
+    },
+    {
+      "suit": "S",
+      "rank": 11,
+      "faceUp": false
+    },
+    {
+      "suit": "S",
+      "rank": 9,
+      "faceUp": false
+    },
+    {
+      "suit": "C",
+      "rank": 3,
+      "faceUp": false
+    },
+    {
+      "suit": "D",
+      "rank": 4,
+      "faceUp": false
+    },
+    {
+      "suit": "H",
+      "rank": 5,
+      "faceUp": false
+    },
+    {
+      "suit": "S",
+      "rank": 6,
+      "faceUp": false
+    },
+    {
+      "suit": "S",
+      "rank": 8,
+      "faceUp": false
+    },
+    {
+      "suit": "C",
+      "rank": 2,
+      "faceUp": false
+    },
+    {
+      "suit": "D",
+      "rank": 3,
+      "faceUp": false
+    },
+    {
+      "suit": "H",
+      "rank": 4,
+      "faceUp": false
+    },
+    {
+      "suit": "S",
+      "rank": 5,
+      "faceUp": false
+    },
+    {
+      "suit": "C",
+      "rank": 1,
+      "faceUp": false
+    },
+    {
+      "suit": "D",
+      "rank": 2,
+      "faceUp": false
+    },
+    {
+      "suit": "H",
+      "rank": 3,
+      "faceUp": false
+    },
+    {
+      "suit": "S",
+      "rank": 4,
+      "faceUp": false
+    },
+    {
+      "suit": "D",
+      "rank": 1,
+      "faceUp": false
+    },
+    {
+      "suit": "H",
+      "rank": 2,
+      "faceUp": false
+    },
+    {
+      "suit": "S",
+      "rank": 3,
+      "faceUp": false
+    },
+    {
+      "suit": "H",
+      "rank": 1,
+      "faceUp": false
+    },
+    {
+      "suit": "S",
+      "rank": 2,
+      "faceUp": false
+    },
+    {
+      "suit": "S",
+      "rank": 1,
+      "faceUp": false
+    },
+    {
+      "suit": "C",
+      "rank": 13,
+      "faceUp": false
+    },
+    {
+      "suit": "C",
+      "rank": 12,
+      "faceUp": false
+    },
+    {
+      "suit": "C",
+      "rank": 11,
+      "faceUp": false
+    },
+    {
+      "suit": "C",
+      "rank": 10,
+      "faceUp": false
+    },
+    {
+      "suit": "C",
+      "rank": 9,
+      "faceUp": false
+    },
+    {
+      "suit": "C",
+      "rank": 8,
+      "faceUp": false
+    },
+    {
+      "suit": "C",
+      "rank": 7,
+      "faceUp": false
+    },
+    {
+      "suit": "C",
+      "rank": 6,
+      "faceUp": false
+    },
+    {
+      "suit": "C",
+      "rank": 5,
+      "faceUp": false
+    },
+    {
+      "suit": "D",
+      "rank": 13,
+      "faceUp": false
+    },
+    {
+      "suit": "D",
+      "rank": 12,
+      "faceUp": false
+    },
+    {
+      "suit": "D",
+      "rank": 11,
+      "faceUp": false
+    },
+    {
+      "suit": "D",
+      "rank": 10,
+      "faceUp": false
+    },
+    {
+      "suit": "D",
+      "rank": 9,
+      "faceUp": false
+    },
+    {
+      "suit": "D",
+      "rank": 8,
+      "faceUp": false
+    },
+    {
+      "suit": "D",
+      "rank": 7,
+      "faceUp": false
+    },
+    {
+      "suit": "D",
+      "rank": 6,
+      "faceUp": false
+    },
+    {
+      "suit": "H",
+      "rank": 13,
+      "faceUp": false
+    },
+    {
+      "suit": "H",
+      "rank": 12,
+      "faceUp": false
+    },
+    {
+      "suit": "H",
+      "rank": 11,
+      "faceUp": false
+    },
+    {
+      "suit": "H",
+      "rank": 10,
+      "faceUp": false
+    },
+    {
+      "suit": "H",
+      "rank": 9,
+      "faceUp": false
+    },
+    {
+      "suit": "H",
+      "rank": 8,
+      "faceUp": false
+    },
+    {
+      "suit": "H",
+      "rank": 7,
+      "faceUp": false
+    }
+  ],
+  "sequence": [
+    {
+      "kind": "card",
+      "label": "A de Espadas"
+    },
+    {
+      "kind": "card",
+      "label": "2 de Espadas"
+    },
+    {
+      "kind": "card",
+      "label": "3 de Espadas"
+    },
+    {
+      "kind": "card",
+      "label": "4 de Espadas"
+    },
+    {
+      "kind": "card",
+      "label": "5 de Espadas"
+    },
+    {
+      "kind": "card",
+      "label": "6 de Espadas"
+    },
+    {
+      "kind": "card",
+      "label": "7 de Espadas"
+    },
+    {
+      "kind": "card",
+      "label": "A de Copas"
+    },
+    {
+      "kind": "card",
+      "label": "2 de Copas"
+    },
+    {
+      "kind": "card",
+      "label": "3 de Copas"
+    },
+    {
+      "kind": "card",
+      "label": "4 de Copas"
+    },
+    {
+      "kind": "card",
+      "label": "5 de Copas"
+    },
+    {
+      "kind": "card",
+      "label": "6 de Copas"
+    },
+    {
+      "kind": "card",
+      "label": "A de Ouros"
+    },
+    {
+      "kind": "card",
+      "label": "2 de Ouros"
+    },
+    {
+      "kind": "card",
+      "label": "3 de Ouros"
+    },
+    {
+      "kind": "card",
+      "label": "4 de Ouros"
+    },
+    {
+      "kind": "card",
+      "label": "5 de Ouros"
+    },
+    {
+      "kind": "card",
+      "label": "A de Paus"
+    },
+    {
+      "kind": "card",
+      "label": "2 de Paus"
+    },
+    {
+      "kind": "card",
+      "label": "3 de Paus"
+    },
+    {
+      "kind": "card",
+      "label": "4 de Paus"
+    },
+    {
+      "kind": "card",
+      "label": "8 de Espadas"
+    },
+    {
+      "kind": "card",
+      "label": "9 de Espadas"
+    },
+    {
+      "kind": "card",
+      "label": "10 de Espadas"
+    },
+    {
+      "kind": "card",
+      "label": "J de Espadas"
+    },
+    {
+      "kind": "card",
+      "label": "Q de Espadas"
+    },
+    {
+      "kind": "card",
+      "label": "K de Espadas"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "7 de Copas"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "8 de Copas"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "9 de Copas"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "10 de Copas"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "J de Copas"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "Q de Copas"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "K de Copas"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "6 de Ouros"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "7 de Ouros"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "8 de Ouros"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "9 de Ouros"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "10 de Ouros"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "J de Ouros"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "Q de Ouros"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "K de Ouros"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "5 de Paus"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "6 de Paus"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "7 de Paus"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "8 de Paus"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "9 de Paus"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "10 de Paus"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "J de Paus"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "Q de Paus"
+    },
+    {
+      "kind": "draw"
+    },
+    {
+      "kind": "draw-card",
+      "label": "K de Paus"
+    }
+  ],
+  "moves": [
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 6
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 0
+      },
+      "cardIndex": 6
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 6
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 0
+      },
+      "cardIndex": 5
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 6
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 0
+      },
+      "cardIndex": 4
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 6
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 0
+      },
+      "cardIndex": 3
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 6
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 0
+      },
+      "cardIndex": 2
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 6
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 0
+      },
+      "cardIndex": 1
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 6
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 0
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 5
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 1
+      },
+      "cardIndex": 5
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 5
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 1
+      },
+      "cardIndex": 4
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 5
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 1
+      },
+      "cardIndex": 3
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 5
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 1
+      },
+      "cardIndex": 2
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 5
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 1
+      },
+      "cardIndex": 1
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 5
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 1
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 4
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 2
+      },
+      "cardIndex": 4
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 4
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 2
+      },
+      "cardIndex": 3
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 4
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 2
+      },
+      "cardIndex": 2
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 4
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 2
+      },
+      "cardIndex": 1
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 4
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 2
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 3
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 3
+      },
+      "cardIndex": 3
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 3
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 3
+      },
+      "cardIndex": 2
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 3
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 3
+      },
+      "cardIndex": 1
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 3
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 3
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 2
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 0
+      },
+      "cardIndex": 2
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 2
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 0
+      },
+      "cardIndex": 1
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 2
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 0
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 1
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 0
+      },
+      "cardIndex": 1
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 1
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 0
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "tableau",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 0
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 1
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 1
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 1
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 1
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 1
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 1
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 1
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 2
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 2
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 2
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 2
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 2
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 2
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 2
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 2
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 3
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 3
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 3
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 3
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 3
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 3
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 3
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 3
+      },
+      "cardIndex": 0
+    },
+    {
+      "type": "draw"
+    },
+    {
+      "type": "move",
+      "from": {
+        "pile": "waste",
+        "index": 0
+      },
+      "to": {
+        "pile": "foundation",
+        "index": 3
+      },
+      "cardIndex": 0
+    }
+  ],
+  "expectedScore": 625,
+  "won": true,
+  "initial": {
+    "stock": [
+      "C13",
+      "C12",
+      "C11",
+      "C10",
+      "C9",
+      "C8",
+      "C7",
+      "C6",
+      "C5",
+      "D13",
+      "D12",
+      "D11",
+      "D10",
+      "D9",
+      "D8",
+      "D7",
+      "D6",
+      "H13",
+      "H12",
+      "H11",
+      "H10",
+      "H9",
+      "H8",
+      "H7"
+    ],
+    "tableau": [
+      [
+        "S13"
+      ],
+      [
+        "S12",
+        "S11"
+      ],
+      [
+        "S10",
+        "S9",
+        "S8"
+      ],
+      [
+        "C4",
+        "C3",
+        "C2",
+        "C1"
+      ],
+      [
+        "D5",
+        "D4",
+        "D3",
+        "D2",
+        "D1"
+      ],
+      [
+        "H6",
+        "H5",
+        "H4",
+        "H3",
+        "H2",
+        "H1"
+      ],
+      [
+        "S7",
+        "S6",
+        "S5",
+        "S4",
+        "S3",
+        "S2",
+        "S1"
+      ]
+    ]
+  }
+}
